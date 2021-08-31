@@ -1,0 +1,37 @@
+Basic Docker command
+----------------------------------------------------------------------------------
+
+docker pull <imagename>
+docker pull rahulbiswaser/playwithdocker
+docker images [To check the images available]
+----------------------
+Create a container:
+----------------------
+docker run -d --name app1 <imagename>
+docker create -d --name app2 <imagenam> [Direct use of image]
+
+docker run -d -p 8080 --name app4 dockerforrahul/playwithdocker
+[playwith docker will expose the container which is already running at port 8080]
+
+docker run -d -p 8081:8080 --name app4 dockerforrahul/playwithdocker
+docker inspect app4 [Describe a running conatiner]
+
+--------------------------------
+Create a build from a Dockerfile
+--------------------------------
+docker build -t dockerforrahul/playwithdocker:1.0 .  [create an Image with a version]
+
+----------------------------
+Push Image to a DockerHub
+----------------------------
+docker login
+docker image push dockerforrahul/playwithdocker:2.0
+
+---------------------
+Docker clone from GIT
+---------------------
+git clone https://github.com/rahulbiswaser/playWithDocker.git
+
+-------------------------------------
+Sample Dockerfile for Springboot app1
+--------------------------------------
